@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript notion d'heritage</h2>
+
+
+<p id="demo"></p>
+
+<script>
+// classe  felin classe mère 
+class felin {
+  constructor(taille,poids, couleur) {
+    // propriétés de felin
+    this.tle = taille;
+    this.pds=poids;
+    this.cle=couleur;
+  }
+// getters et setters
+set taille(x)
+{
+  this.tle=x;
+}
+// retourne la taille d'un felin
+get taille()
+{
+  return this.tle;
+}
+
+// getters et setters
+set couleur(x)
+{
+  this.cle=x;
+}
+// retourne la taille d'un felin
+get couleur()
+{
+  return this.cle;
+}
+
+// getters et setters
+set poids(x)
+{
+  this.pds=x;
+}
+// retourne la taille d'un felin
+get poids()
+{
+  return this.pds;
+}
+pousserUncrie(){
+  alert(" rougoulélé");
+}
+declinersonIdentite()
+{
+   alert("je suis un felin");
+}
+
+}
+// classe fille lion 
+class lion extends felin
+{
+  constructor(taille,poids, couleur,taillecriniere) {
+    super(taille,poids, couleur);
+    //this.brand= ford 
+    this.tc = taillecriniere;
+  }
+  set taillecriniere(x)
+  {
+    this.tc=x;
+  }
+     get taillecriniere()
+     {
+       return this.tc;
+     }
+
+     pousserUncrie()
+     {
+        alert(" je suis un lion");
+     }
+}
+ // classe fille tigre 
+ class tigre extends felin
+ {
+  constructor(taille,poids, couleur,taillerayure) {
+    super(taille,poids, couleur);
+    //this.brand= ford 
+    this.tr = taillerayure;
+  }
+  set taillerayure(x)
+  {
+    this.tr=x;
+  }
+     get taillerayure()
+     {
+       return this.tr;
+     }
+
+     pousserUncrie()
+     {
+        alert(" je suis un tigre");
+     }
+
+ }
+  // instanciation 
+
+  myLion= new lion("1m50","80kg","marron","10cm");
+    alert(myLion.taillecriniere);
+    myLion.pousserUncrie();
+    myLion.declinersonIdentite();
+    myLion.taille="3m45";
+    alert(myLion.taille)
+    /*myLion.taille("1m80");
+    alert(myLion.taille);
+
+    myLion.taillecriniere="15cm";  // utilisation du setter 
+    alert(myLion.taillecriniere);   // utilisation du getter */
+    /*myLion2 = new felin("2m10","90kg","or");
+    alert (myLion2.taille);
+    myLion2.taillecriniere="45cm"
+    alert(myLion2.taillecriniere);
+    myLion2.pousserUncrie();*/
+    // instanciation de la classe tigre 
+   /* myTigre= negre("1m50","80kg","marron","2cm");
+    alert(myTigre.taillerayure);
+    myTigre.pousserUncrie();
+    myTigre.declinersonIdentite();*/
+
+
+// classe mère , classe parent 
+/*class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+  present() {
+    return 'I have a ' + this.carname;
+  }
+}
+ //  classe fille  = celle qui herite : mot clé : extends
+class Model extends Car {
+  constructor(brand, mod) {
+    super(brand);
+    //this.brand= ford 
+    this.model = mod;
+  }
+  show() {
+    return this.present() + ', it is a ' + this.model;
+  }
+}
+
+mycar = new Model("Ford", "Mustang");
+document.getElementById("demo").innerHTML = mycar.show();
+*/
+</script>
+
+</body>
+</html>

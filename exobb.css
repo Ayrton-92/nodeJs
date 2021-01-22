@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+body {
+  padding-top: 3%;
+}
+
+body h1 {
+  font-family: 'Architects Daughter', cursive;
+  text-align: center;
+  color: #383838;
+}
+
+body p {
+  font-family: 'Architects Daughter', cursive;
+  color: #383838;
+}
+
+.row {
+  text-align: center;
+}
+
+table {
+  border-width: 1px;
+  width: 100%;
+}
+
+table td {
+  width: 30px;
+}
+
+button {
+  background-color: red;
+  color: white;
+  border-style: double;
+  border-color: white;
+  width: 80px;
+}
+
+#reverse {
+  padding-top: 5.5%;
+}
+
+input {
+  width: 90%;
+}
+/*# sourceMappingURL=exobb.css.map */

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js obj constructor</title>
+</head>
+
+<body>
+    <h3>obj contructor</h3>
+    <script>
+        var voiture = {
+            marque: 'renault',
+            modele: 'twingo',
+            annee: 2000,
+            i: 0,
+            compteurKm: function() {
+                return this.i++;
+            },
+            get lemodel() {
+                return this.modele;
+            }
+        }
+
+        var voiture2 = {
+            marque: 'citroen',
+            modele: 'picasso',
+            annee: 2004,
+            i: 0,
+            compteurKm: function() {
+                return this.i++;
+            },
+            get lemodel() {
+                return this.modele;
+            }
+        }
+        console.log("le compteur de la voiture " + voiture.compteurKm());
+        console.log("le compteur de la voiture " + voiture.compteurKm());
+        console.log("le compteur de la voiture " + voiture2.lemodel);
+
+
+        var date = new Date(2010);
+
+        //obj constructor function
+        function Voiture(marque, modele, annee) {
+            this.marque = marque;
+            this.modele = modele;
+            this.annee = annee;
+            this.i = 0;
+            this.compteurKm = function() {
+                return this.i++;
+            }
+            this.initCompteur = function(km) {
+                return this.i = km;
+            }
+
+        }
+        var voiture1 = new Voiture("renault", "twingo", 2000);
+        voiture1.initCompteur(1000)
+        var voiture2 = new Voiture("citroen", "picasso", 2004);
+        voiture1.initCompteur(5000)
+        console.log("marque " + voiture1.marque);
+        console.log("marque " + voiture2.marque);
+
+        console.log("compteurKm " + voiture1.compteurKm());
+        console.log("compteurKm " + voiture2.compteurKm());
+        console.log("compteurKm " + voiture1.compteurKm());
+        console.log("compteurKm " + voiture2.compteurKm());
+    </script>
+</body>
+
+</html>

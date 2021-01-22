@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>JavaScript Class Setter</h2>
+
+    <p id="demo0"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+
+    <script>
+        class Car {
+            // constructeur 1
+            constructor(brand, model) {
+                    this._carname = brand;
+                    this._model = model;
+                }
+                // constructeur 2
+                //  constructor(brand) {
+                //  this.brand= brand;
+                //}
+
+            // setter de l'attribut carname
+            set carname(x) {
+                    this._carname = x;
+                }
+                // getter de l'attribut carname
+            get carname() {
+                    return this._carname;
+                }
+                // setter de l'attribut model
+            set model(y) {
+                    this._model = y;
+                }
+                // getter de l'attribut model
+            get model() {
+                return this._model;
+            }
+            affichage(x, y) {
+                //affichage du carname de l'obejt mycar => utilisation du getter carname
+                document.getElementById("demo0").innerHTML = x;
+                // affichage du model de  l'objet mycar => l'utilisation du getter model
+                document.getElementById("demo1").innerHTML = y;
+
+            }
+
+        }
+
+        // declaration d'une fonction affichage bis
+
+        function affichagebis(x, y) {
+            //affichage du carname de l'obejt mycar => utilisation du getter carname
+            document.getElementById("demo0").innerHTML = x;
+            // affichage du model de  l'objet mycar => l'utilisation du getter model
+            document.getElementById("demo1").innerHTML = y;
+
+        }
+
+
+        // instanciation de la classe 
+        mycar = new Car("Ford", "Cougar");
+        mycar2 = new Car("Renault", "kangoo");
+        mycar3 = new Car("Peugeot");
+        //mycar3.carname="Peugeot";
+        //mycar3.model="5008";
+        alert(mycar3.brand);
+
+        //Appel de la fonction d'affichage de l'objet 1
+        mycar.affichage(mycar.carname, mycar.model);
+        //Appel de la fonction d'affichage de l'objet 2
+        mycar2.affichage(mycar2.carname, mycar2.model);
+        //Appel de la fonction affichagebis
+        //affichagebis(mycar.carname,mycar.model);
+
+        // Utilisation  du setter carname 
+        mycar.carname = "Volvo"; // appel  du setter 
+        mycar.model = "xc90"; // appel  du setter 
+        mycar.affichage(mycar.carname, mycar.model);
+        mycar3.affichage(mycar3.carname, mycar3.model);
+    </script>
+
+</body>
+
+</html>
